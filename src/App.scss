@@ -36,6 +36,12 @@
       font-size: 48px;
       color: white;
       font-weight: 300;
+
+      span {
+        font-size: larger;
+        color: white;
+        cursor: pointer;
+      }
     }
 
     #condition {

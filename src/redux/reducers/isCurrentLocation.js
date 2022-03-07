@@ -1,4 +1,4 @@
-const currentLocationReducer = (state = false, action) => {
+const currentLocationReducer = (state = true, action) => {
     switch(action.type) {
         case 'USE_CURRENT':
             return !state;
