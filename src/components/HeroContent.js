@@ -1,18 +1,35 @@
 import React from 'react'
-import { useEffect, useState } from 'react'
 import '../App.scss'
 import { useSelector, useDispatch } from 'react-redux'
 import { CurrentLocation, ChangeCity } from '../redux/actions'
 import { LocationOn, LocationOnOutlined} from '@material-ui/icons'
+
 
 export default function HeroContent(props) {
 
 const timeElapsed = Date.now();
 const today = new Date(timeElapsed)
 const isCurrentLocation = useSelector(state => state.isCurrentLocation)
+const currentCity = useSelector(state => state.currentCity)
+const cityDispatch = useDispatch()
+const dispatch = useDispatch()
 
 function setLocation() {
-    console.log('print')
+    console.log(isCurrentLocation, currentCity.toString())
+    console.log(props.cityData?.location?.name)
+    dispatch(CurrentLocation(!isCurrentLocation))
+    if (isCurrentLocation === true) {
+        // permission allowed
+      if (props.coords !== "") {
+        cityDispatch(ChangeCity(props.coords))
+      } 
+      // permission denied
+      else {
+        alert("Please allow location access to see your current location!")
+    }  
+      } else if (isCurrentLocation === false) {
+        cityDispatch(ChangeCity('Glasgow'))
+    }
 } 
 
   return (

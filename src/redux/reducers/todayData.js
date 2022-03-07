@@ -1,10 +1,10 @@
-const changeCity = (state = "Glasgow", action) => {
+const todayData = (state = [], action) => {
     switch(action.type) {
-        case 'USE_CURRENT_CITY':
+        case 'FETCH_DATA':
             return state = action.payload
         default:
             return state
     }
 }
 
-export default changeCity
+export default todayData

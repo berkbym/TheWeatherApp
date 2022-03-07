@@ -10,3 +10,10 @@ export const ChangeCity = (city) => {
         payload: city
     }
 }
+
+export const FetchData = (todayData) => {
+    return {
+        type: 'FETCH_DATA',
+        payload: todayData
+    }
+}

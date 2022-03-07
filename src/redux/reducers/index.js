@@ -1,10 +1,10 @@
 import currentLocationReducer from "./isCurrentLocation";
-import changeCity from "./changeCity";
+import currentCity from "./currentCity";
 import { combineReducers } from "redux";
 
 const reducers = combineReducers({
     isCurrentLocation: currentLocationReducer,
-    changeCity: changeCity
+    currentCity: currentCity
 })
 
 export default reducers
