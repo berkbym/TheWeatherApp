@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import '../App.css'
+import '../App.scss'
 
 export default function ForecastGroup() {
 

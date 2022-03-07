@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import '../App.css'
+import '../App.scss'
 
 export default function HeroContent() {
 
@@ -10,6 +10,8 @@ const [coords, setCoords] = useState("")
 const [city, setCity] = useState("Glasgow")
 const [toggle, setToggle] = useState(true)
 var apikey = 'd7d6e1e52e0f4736900125350211105'
+const timeElapsed = Date.now();
+const today = new Date(timeElapsed);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -35,9 +37,19 @@ var apikey = 'd7d6e1e52e0f4736900125350211105'
 
   return (
     <div className='heroContent'>
-        <section>
-            <p>{cityData?.location?.name},{cityData?.location?.country}</p>
-            <p>{cityData?.current?.temp_c}&deg;</p>
+        <section className='weatherTodayGroup'>
+            <p className='date'>Today {today.toDateString()}</p>
+            <p className='location'>{cityData?.location?.name},{cityData?.location?.country}</p>
+            <div className='weatherDetailGroup'>
+                <p id='condition'>{cityData?.current?.condition?.text}</p>
+                <div className='iconGroup'>
+                    <img src={cityData?.current?.condition?.icon} alt=""/>
+                    <p>{cityData?.current?.temp_c}&deg;</p>
+                </div>
+            </div>
+        </section>
+        <section className='weatherTableGroup'>
+            <p>table</p>
         </section>
     </div>
   )

@@ -1,0 +1,80 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(38, 126, 167);
+}
+
+.navbar {
+  width: 100%;
+  height: 10vh;
+
+  .logo {
+    padding: 2%;
+    font-weight: bold;
+    color: white;
+  }
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 50vh;
+
+  .weatherTodayGroup {
+    padding: 2%;
+    width: 50%;
+
+    .date {
+      font-size: 32px;
+      font-weight: lighter;
+      color: white;
+    }
+
+    .location {
+      font-size: 48px;
+      color: white;
+      font-weight: 300;
+    }
+
+    .weatherDetailGroup {
+      margin-top: 2%;
+
+      #condition {
+        font-size: 32px;
+        color: white;
+        font-weight: 300;
+      }
+
+      .iconGroup {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 1%;
+  
+        img {
+          width: 100px;
+          height: 100px;
+          margin-right: 2%;
+        }
+  
+        p {
+          font-size: 72px;
+          font-weight: bold;
+          color: white; 
+        }
+      }
+    }
+  }
+
+  .weatherTableGroup {
+    width: 50%;
+    padding: 2%;
+  }  
+}
+
+.forecastGroup {
+  width: 100%;
+  height: 40vh;
+  background-color: white;
+}

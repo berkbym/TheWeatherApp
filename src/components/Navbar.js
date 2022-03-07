@@ -1,8 +1,10 @@
 import React from 'react'
-import '../App.css'
+import '../App.scss'
 
 export default function Navbar() {
   return (
-    <div className='navbar'>Navbar</div>
+    <div className='navbar'>
+      <h1 className='logo'>TheWeatherApp</h1>  
+    </div>
   )
 }

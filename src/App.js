@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import ForecastGroup from './components/ForecastGroup';
 import HeroContent from './components/HeroContent';
 import Navbar from './components/Navbar';
