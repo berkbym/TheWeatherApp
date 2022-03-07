@@ -36,9 +36,7 @@ var apikey = 'd7d6e1e52e0f4736900125350211105'
   return (
     <div className='heroContent'>
         <section>
-            <p>{cityData?.location?.name} </p>
-            {cityData?.location?.region}-
-            {cityData?.location?.country}
+            <p>{cityData?.location?.name},{cityData?.location?.country}</p>
             <p>{cityData?.current?.temp_c}&deg;</p>
         </section>
     </div>
