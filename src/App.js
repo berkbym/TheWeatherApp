@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import ForecastGroup from './components/ForecastGroup';
+import HeroContent from './components/HeroContent';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <Navbar />
+      {/* Hero Content component shows today's weather.*/}
+      <HeroContent />
+      {/* 
+        ForecastGroup component shows the next 3 days from the Weather API.
+        With the current free payment method only 3 days can be shown.
+       */}
+      <ForecastGroup />
     </div>
   );
 }
