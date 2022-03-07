@@ -21,10 +21,6 @@ var apikey = 'd7d6e1e52e0f4736900125350211105'
     })
 
     const fetchData = async () => {
-        const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=${apikey}&q=${city}`)
-        const data = await response.json()
-        setCityData(data)
-
         // With free api the only option is 3 days
         const forecastResponse = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${apikey}&q=${city}&days=7`)
         const forecastData = await forecastResponse.json()
@@ -35,7 +31,22 @@ var apikey = 'd7d6e1e52e0f4736900125350211105'
 
   return (
     <div className='forecastGroup'>
-        Forecast Group
+        <p className='title'>This Week's Weather Forecast</p>
+        <div className='forecastTable'>
+          {cityForecastData?.forecast?.forecastday?.map(
+              (day) => (
+                <div key={day.date} className='forecastCard'>
+                  <p>{day.date}</p>
+                  
+                  <p>{day.day.condition.text}</p>
+                  <div className='iconGroup'>
+                    <p>{Math.ceil(day.day.avgtemp_c)}&deg;</p>
+                    <img src={day.day.condition.icon} alt=""/>
+                  </div>
+                </div> 
+              )
+            )}
+        </div>
     </div>
   )
 }

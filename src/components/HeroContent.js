@@ -40,16 +40,32 @@ const today = new Date(timeElapsed);
         <section className='weatherTodayGroup'>
             <p className='date'>Today {today.toDateString()}</p>
             <p className='location'>{cityData?.location?.name},{cityData?.location?.country}</p>
+            <p id='condition'>{cityData?.current?.condition?.text}</p>
             <div className='weatherDetailGroup'>
-                <p id='condition'>{cityData?.current?.condition?.text}</p>
                 <div className='iconGroup'>
+                <p>{cityData?.current?.temp_c}&deg;</p>
                     <img src={cityData?.current?.condition?.icon} alt=""/>
-                    <p>{cityData?.current?.temp_c}&deg;</p>
+                    
                 </div>
+                <table className='table'>
+                <tr>
+                    <td>Feels Like</td>
+                    <td>{Math.ceil(cityData?.current?.feelslike_c)}&deg;</td>
+                </tr>
+                <tr>
+                    <td>Humidity</td>
+                    <td>{cityData?.current?.humidity}%</td>
+                </tr>
+                <tr>
+                    <td>Wind</td>
+                    <td>{cityData?.current?.wind_dir} {Math.ceil(cityData?.current?.wind_kph)} km/h</td>
+                </tr>
+                <tr>
+                    <td>Pressure</td>
+                    <td>{cityData?.current?.pressure_mb} mb</td>
+                </tr>
+            </table>
             </div>
-        </section>
-        <section className='weatherTableGroup'>
-            <p>table</p>
         </section>
     </div>
   )
