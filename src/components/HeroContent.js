@@ -42,7 +42,7 @@ function changeLocation() {
             <p className='date'>Today {today.toDateString()}</p>
             <p className='location'>
                 {todayData?.location?.name},{todayData?.location?.country}
-                <span>{isCurrentLocation ? <LocationOnOutlined onClick={changeLocation} fontSize='large'/> : <LocationOn onClick={changeLocation} fontSize='large' />}</span> 
+                <span>{isCurrentLocation ? <LocationOnOutlined id='outlined' onClick={changeLocation} fontSize='large'/> : <LocationOn id='filled' onClick={changeLocation} fontSize='large' />}</span> 
             </p>
             <p id='condition'>{todayData?.current?.condition?.text}</p>
             <div className='weatherDetailGroup'>
