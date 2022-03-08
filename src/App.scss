@@ -186,7 +186,7 @@
 
   // Samsung Galaxy S8+
   @media only screen 
-  and (min-device-width: 375px) 
+  and (min-device-width: 360px) 
   and (max-device-width: 750px) 
   and (-webkit-min-device-pixel-ratio: 2) {
 
@@ -216,7 +216,7 @@
       .forecastTable {
         display: grid;
         grid-template-columns: repeat(2, auto);
-        width: 100%;
+        width: 90%;
         height: auto;
         .forecastCard {
           width: auto;
@@ -258,7 +258,7 @@
       .forecastTable {
         display: grid;
         grid-template-columns: repeat(2, auto);
-        width: 100%;
+        width: 90%;
         height: auto;
         .forecastCard {
           width: auto;
@@ -278,7 +278,7 @@ and (-webkit-device-pixel-ratio: 3) {
         .weatherTodayGroup {
           width: 100%;
           .location {
-            font-size: 44px;
+            font-size: 40px;
           }
 
           .weatherDetailGroup {
@@ -300,7 +300,7 @@ and (-webkit-device-pixel-ratio: 3) {
         .forecastTable {
           display: grid;
           grid-template-columns: repeat(2, auto);
-          width: 100%;
+          width: 90%;
           height: auto;
           .forecastCard {
             width: auto;
