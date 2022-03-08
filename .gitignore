@@ -2,9 +2,6 @@
 # Created by https://www.toptal.com/developers/gitignore/api/reactnative,react,dotenv
 # Edit at https://www.toptal.com/developers/gitignore?templates=reactnative,react,dotenv
 
-### dotenv ###
-.env
-
 ### react ###
 .DS_*
 *.log
