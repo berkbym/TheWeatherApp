@@ -8,10 +8,10 @@ import Navbar from './components/Navbar';
 
 function App() {
 
+  let apikey = process.env.REACT_APP_API_KEY
   const [cityData,setCityData] = useState([])
   const [city, setCity] = useState('Glasgow')
   const [coords, setCoords] = useState('')
-  var apikey = 'd7d6e1e52e0f4736900125350211105'
   const currentCity = useSelector(state => state.currentCity)
   const cityDispatch = useDispatch()
   const fetchDispatch = useDispatch()
@@ -36,12 +36,10 @@ function App() {
       // 7 days weather forecast data.
       const forecastResponse = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${apikey}&q=${currentCity}&days=7`)
       const forecastData = await forecastResponse.json()
-      //setForecastData(forecastData)
       fetchForecastDispatch(FetchForecastData(forecastData))
     }
     fetchData()
   }, [apikey, city, currentCity, cityData, cityDispatch, fetchDispatch, fetchForecastDispatch])
-
 
   return (
     <div className='container'>
