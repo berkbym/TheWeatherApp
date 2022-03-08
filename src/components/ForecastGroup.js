@@ -1,13 +1,14 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
 import '../App.scss'
+import { useSelector} from 'react-redux'
 
-export default function ForecastGroup(props) {
+export default function ForecastGroup() {
+  const forecastData = useSelector(state => state.forecastData)
   return (
     <div className='forecastGroup'>
         <p className='title'>This Week's Weather Forecast</p>
         <div className='forecastTable'>
-          {props.cityForecastData?.forecast?.forecastday?.map(
+          {forecastData?.forecast?.forecastday?.map(
               (day) => (
                 <div key={day.date} className='forecastCard'>
                   <p>{day.date}</p>

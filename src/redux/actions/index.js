@@ -14,6 +14,13 @@ export const ChangeCity = (city) => {
 export const FetchData = (todayData) => {
     return {
         type: 'FETCH_DATA',
-        payload: todayData
+        payload: todayData 
+    }
+}
+
+export const FetchForecastData = (forecastData) => {
+    return {
+        type: 'FETCH_FORECAST_DATA',
+        payload: forecastData
     }
 }
