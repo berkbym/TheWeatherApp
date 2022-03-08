@@ -9,10 +9,13 @@ import Navbar from './components/Navbar';
 function App() {
 
   let apikey = process.env.REACT_APP_API_KEY
+  // States
   const [cityData,setCityData] = useState([])
   const [city, setCity] = useState('Glasgow')
   const [coords, setCoords] = useState('')
+  // Redux Store State
   const currentCity = useSelector(state => state.currentCity)
+  // Dispatch Functions
   const cityDispatch = useDispatch()
   const fetchDispatch = useDispatch()
   const fetchForecastDispatch = useDispatch()
@@ -33,7 +36,7 @@ function App() {
       setCityData(data)
       fetchDispatch(FetchData(data))
 
-      // 7 days weather forecast data.
+      // Weather forecast data for next 7 days.
       const forecastResponse = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${apikey}&q=${currentCity}&days=7`)
       const forecastData = await forecastResponse.json()
       fetchForecastDispatch(FetchForecastData(forecastData))

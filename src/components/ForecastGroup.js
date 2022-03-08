@@ -3,7 +3,9 @@ import '../App.scss'
 import { useSelector} from 'react-redux'
 
 export default function ForecastGroup() {
+  
   const forecastData = useSelector(state => state.forecastData)
+  
   return (
     <div className='forecastGroup'>
         <p className='title'>This Week's Weather Forecast</p>

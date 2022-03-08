@@ -6,16 +6,18 @@ import { LocationOn, LocationOnOutlined} from '@material-ui/icons'
 
 export default function HeroContent(props) {
 
-const timeElapsed = Date.now();
-const today = new Date(timeElapsed)
+const time = Date.now();
+const today = new Date(time)
+// Redux Store State
 const isCurrentLocation = useSelector(state => state.isCurrentLocation)
+const todayData = useSelector(state => state.todayData)
+// Dispatch Functions
 const cityDispatch = useDispatch()
 const dispatch = useDispatch()
-const todayData = useSelector(state => state.todayData)
 
 /**
  * @name changeLocation
- * @description Changes the user location to be fetched from the API. The default value is Glasgow.
+ * @description Changes the current location to be fetched from the API. The default value is Glasgow.
  */
 function changeLocation() {
     dispatch(CurrentLocation(!isCurrentLocation))
@@ -26,8 +28,9 @@ function changeLocation() {
         } 
         // Location permission denied
         else {
-        alert("Please allow location access to see your current location!")
+        alert("Please allow location access to see your current location's weather!")
         }  
+        // Display default city 
     } else if (isCurrentLocation === false) {
         cityDispatch(ChangeCity('Glasgow'))
     }
@@ -50,8 +53,8 @@ function changeLocation() {
                 <table className='table'>
                     <tbody>
                         <tr>
-                        <td>Feels Like</td>
-                        <td>{Math.ceil(todayData?.current?.feelslike_c)}&deg;</td>
+                            <td>Feels Like</td>
+                            <td>{Math.ceil(todayData?.current?.feelslike_c)}&deg;</td>
                         </tr>
                         <tr>
                             <td>Humidity</td>
