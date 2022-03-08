@@ -27,23 +27,16 @@ it('Default location access must be false', () => {
     expect(getValue(isCurrentLocation)).toBeFalsy()
 })
 
-it('Default location access must be not true', () => {
-  const {isCurrentLocation} = render(
-    <Provider store={store}>
-      <HeroContent />
-    </Provider>
-    );
-    expect(getValue(isCurrentLocation)).not.toBeTruthy()
-})
 
-it('Default city', () => {
-  const {city} = render(
-    <Provider store={store}>
-      <App />
-    </Provider>
-    );
-    expect(getValue(city)).toBe('Glasgow')
-})
+// it('Default city', () => {
+//   const {city} = render(
+//     <Provider store={store}>
+//       <App />
+//     </Provider>
+//     );
+//     const value = render().findByDisplayValue(city)
+//     expect(value).toBe('Glasgow')
+// })
 
 //data fetched test
 //location allow test
